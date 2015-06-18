@@ -6,6 +6,7 @@
     <RootNamespace>MusicStore</RootNamespace>
     <InterpreterId>{d59dc552-1d79-4384-aad9-6098a67878f4}</InterpreterId>
     <InterpreterVersion>3.4</InterpreterVersion>
+    <NameOfLastUsedPublishProfile>musicstoremva</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -52,6 +53,10 @@
     <Folder Include="MusicStore\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\artistdetails.html" />
+    <Content Include="app\templates\app\artists.html" />
+    <Content Include="app\templates\app\create.html" />
+    <None Include="musicstoremva.pubxml" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

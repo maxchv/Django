@@ -15,7 +15,9 @@ urlpatterns = patterns('',
     # Examples:
 
     url(r'^artists$', 'app.views.artists', name='artists'),
-    url(r'^artists/(?P<name>[A-Za-z]+)$', 'app.views.artistdetails', name='artistdetails'),
+    url(r'^artists/create$', 'app.views.artistcreate', name='artistcreate'),
+    url(r'^artists/(?P<id>\d+)$', 'app.views.artistdetails', name='artistdetails'),
+    #url(r'^artists/(?P<name>[A-Za-z]+)$', 'app.views.artistdetails', name='artistdetails'),
 
     url(r'^$', 'app.views.home', name='home'),
     url(r'^contact$', 'app.views.contact', name='contact'),

@@ -20,11 +20,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': path.join(PROJECT_ROOT, 'db.sqlite3'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'MusicStore',
+        'USER': 'bb0367078153aa',
+        'PASSWORD': 'dcf9d3d3',
+        'HOST': 'us-cdbr-azure-west-c.cloudapp.net',
         'PORT': '',
     }
 }

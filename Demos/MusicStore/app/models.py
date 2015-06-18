@@ -15,6 +15,11 @@ class ArtistForm(forms.ModelForm):
         model = Artist;
         fields = ['name', 'year_formed'];
 
+class ArtistForm(forms.ModelForm):
+    class Meta:
+        model = Artist;
+        fields = ['name', 'year_formed'];
+
 class Album(models.Model):
     name = models.CharField(max_length=50);
     artist = models.ForeignKey(Artist);

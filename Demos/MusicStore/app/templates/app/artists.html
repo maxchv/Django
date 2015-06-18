@@ -1,0 +1,19 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+    <h2>Artists</h2>
+
+    {% for artist in artists %}
+        <div class="row">
+            <div class="col-md-3">
+                <a href="/artists/{{ artist.id }}">
+                    {{ artist.name }}
+                </a>
+            </div>
+            <div class="col-md-1">
+                {{ artist.year_formed }}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

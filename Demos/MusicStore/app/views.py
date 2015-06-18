@@ -2,19 +2,29 @@
 Definition of views.
 """
 
-from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render, render_to_response
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from datetime import datetime
+from app.models import *;
+
+def artistcreate(request):
+    if request.method == "GET": 
+        form = ArtistForm();
+        return render(request, 'app/create.html', { 'form':form });
+    elif request.method == "POST":
+        form = ArtistForm(request.POST);
+        form.save();
+        return HttpResponseRedirect('/artists');
 
 def artists(request):
-    return HttpResponse('<html><head><title>Hello, Django!</title></head><body><h1>Hello, Django</h1></body></html>');
+    #return HttpResponse('<html><head><title>Hello, Django!</title></head><body><h1>Hello, Django</h1></body></html>');
+    artists = Artist.objects.all();
+    return render_to_response('app/artists.html', { 'artists': artists });
 
-def artistdetails(request, name):
-    output = '<html><head><title>' + name
-    output += '</title></head><body><h1>' + name
-    output += '</h1></body></html>'
-    return HttpResponse(output);
+def artistdetails(request, id):
+    artist = Artist.objects.get(pk = id);
+    return render_to_response('app/artistdetails.html', { 'artist': artist });
 
 def home(request):
     """Renders the home page."""
